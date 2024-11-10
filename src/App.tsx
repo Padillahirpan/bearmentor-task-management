@@ -1,14 +1,17 @@
 import "./App.css";
-import { Button } from "./components/ui/button";
+import { ThemeProvider } from "./components/theme-provider";
+import { NavBar } from "./components/home/header";
+import { ListGoalByStatus } from "./components/home/list-goal-by-status";
 
 function App() {
   return (
     <>
-      <div>
-        <p>Test</p>
-        <button>Click Here</button>
-        <Button variant="ghost">Click Here</Button>
-      </div>
+      <ThemeProvider defaultTheme="dark" storageKey="ui-theme">
+        <div>
+          <NavBar />
+          <ListGoalByStatus />
+        </div>
+      </ThemeProvider>
     </>
   );
 }
