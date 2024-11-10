@@ -17,7 +17,7 @@ export const ListGoalByStatus = () => {
         </div>
 
         <div className="grid grid-cols-3 gap-4 border rounded-lg">
-          {statusTask.map((item, index) => {
+          {statusTask.map((item) => {
             const goals = listGoal.filter((goal) => goal.status === item.id);
             console.log("this is item : " + item.id);
             return <ListGoal key={item.id} status={item} listGoal={goals} />;

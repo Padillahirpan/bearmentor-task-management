@@ -17,7 +17,7 @@ export const ListGoal = ({
           <GoalStatus status={status} />
         </div>
         <div className="py-2">
-          <EmptyCard statusId={status.id} />
+          <EmptyCard />
         </div>
       </div>
     );
