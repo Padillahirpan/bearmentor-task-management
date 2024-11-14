@@ -1,4 +1,5 @@
 import { GoalData } from "@/data/goals-data";
+import { cn } from "@/lib/utils";
 
 export const ItemGoal = ({
   goalData,
@@ -7,25 +8,17 @@ export const ItemGoal = ({
   goalData: GoalData;
   statusId: number;
 }) => {
-  let bgColor;
-  if (statusId == 1) {
-    bgColor =
-      "p-6 items-start max-w-sm bg-neutral-200 border border-gray-200 rounded-lg shadow dark:bg-neutral-700 dark:border-gray-700";
-  } else if (statusId == 2) {
-    bgColor =
-      "p-6 items-start max-w-sm bg-blue-200 border border-gray-200 rounded-lg shadow dark:bg-blue-700 dark:border-gray-700";
-  } else if (statusId == 3) {
-    bgColor =
-      "p-6 items-start max-w-sm bg-emerald-200 border border-gray-200 rounded-lg shadow dark:bg-emerald-700 dark:border-gray-700";
-  } else {
-    bgColor =
-      "p-6 items-start max-w-sm bg-neutral-200 border border-gray-200 rounded-lg shadow dark:bg-neutral-700 dark:border-gray-700";
-  }
-
   return (
     <>
       <a href="#">
-        <div className={bgColor}>
+        <div
+          className={cn(
+            "p-6 items-start max-w-sm rounded-lg shadow border border-gray-200 dark:border-gray-700",
+            statusId === 1 && "bg-neutral-200 dark:bg-neutral-700 ",
+            statusId === 2 && "bg-blue-200 dark:bg-blue-700",
+            statusId === 3 && "bg-emerald-200 dark:bg-emerald-700"
+          )}
+        >
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-left">
             {goalData.title}
           </h5>

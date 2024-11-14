@@ -2,6 +2,7 @@ import { GoalStatus } from "./goal-status";
 import { ItemGoal } from "./item-goal";
 import { EmptyCard } from "./item-empty-goal";
 import { GoalData, GoalStatusData } from "@/data/goals-data";
+import { useState } from "react";
 
 export const ListGoal = ({
   status,
@@ -10,6 +11,8 @@ export const ListGoal = ({
   status: GoalStatusData;
   listGoal: GoalData[];
 }) => {
+  const [count, setCount] = useState(0);
+
   if (listGoal.length === 0) {
     return (
       <div className="items-start p-2 rounded-lg">
