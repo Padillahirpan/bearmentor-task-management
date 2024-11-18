@@ -5,15 +5,15 @@ export type GoalStatusData = {
 }
 
 export type GoalData = {
-   id: number;
+   id?: string;
    title: string;
    context: string;
    target: string;
-   createAt: number;
+   createdAt?: number;
    timelineDate: number;
    status: number;
-   statusComplete: string;
-   task: TaskData[];
+   statusComplete?: string;
+  //  task: TaskData[];
 }
 
 
@@ -28,3 +28,10 @@ export interface GoalDataByStatus {
   statusId: number,
   goalData: GoalData[]
 }
+
+export type RouteError = {
+  internal: boolean;
+  status: number;
+  statusText: string;
+  message: string;
+};

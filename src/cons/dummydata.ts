@@ -18,98 +18,85 @@ export const statusGoals = [
   },
 ];
 
-// async function getData(): Promise<Payment[]> {
-//   // Fetch data from your API here.
-//   return [
-//     {
-//       id: "728ed52f",
-//       amount: 100,
-//       status: "pending",
-//       email: "m@example.com",
-//     },
-//     // ...
-//   ]
-// }
-
 export function getGoalsData(): GoalData[] {
   return [
     {
-      id: 1,
-      title: "Seminggu solat dhuha",
+      id: '1',
+      title: "Seminggu solat dhuha tidak lupa dan ingat selalu itu ",
       context: "Belajar membiasakan solat dhuha",
       target: "Sehari minimal 2 rakaat shalat dhuha",
-      createAt: 1731260774000,
+      createdAt: 1731260774000,
       timelineDate: 1731260774000,
       status: 2,
       statusComplete: "33% in progress",
-      task: [
-        {
-          id: 0,
-          title: "Wudhu setelah mandi",
-          status: 1,
-          endDate: 1731260774000,
-        },
-        {
-          id: 1,
-          title: "Baca Quran setelah solat subuh",
-          status: 1,
-          endDate: 1731260774000,
-        },
-      ]
+      // task: [
+      //   {
+      //     id: 0,
+      //     title: "Wudhu setelah mandi",
+      //     status: 1,
+      //     endDate: 1731260774000,
+      //   },
+      //   {
+      //     id: 1,
+      //     title: "Baca Quran setelah solat subuh",
+      //     status: 1,
+      //     endDate: 1731260774000,
+      //   },
+      // ]
     },
     {
-      id: 2,
+      id: '2',
       title: "Membaca 1 buku per bulan",
       context: "Membuat habit baru membaca buku",
       target: "Sehari minimal membaca 10 halaman",
-      createAt: 1731260774000,
+      createdAt: 1731260774000,
       timelineDate: 1731260774000,
       status: 1,
       statusComplete: "Still 0%, let's start ",
-      task: [
-        {
-          id: 3,
-          title: "Beli buku Self-Dev",
-          status: 0,
-          endDate: 1731260774000,
-        },
-        {
-          id: 4,
-          title: "Membaca buku di pagi hari 5 halaman",
-          status: 0,
-          endDate: 1731260774000,
-        },        
-      ]
+      // task: [
+      //   {
+      //     id: 3,
+      //     title: "Beli buku Self-Dev",
+      //     status: 0,
+      //     endDate: 1731260774000,
+      //   },
+      //   {
+      //     id: 4,
+      //     title: "Membaca buku di pagi hari 5 halaman",
+      //     status: 0,
+      //     endDate: 1731260774000,
+      //   },        
+      // ]
     },
     {
-      id: 3,
+      id: '3',
       title: "Badan BUGAR",
       context: "Badan tidak pegal-pegal dan bisa beraktivitas normal",
       target: "Menaikan berat badan ke 60kg",
-      createAt: 1731260774000,
+      createdAt: 1731260774000,
       timelineDate: 1731260774000,
       status: 1,
       statusComplete: "Still 0%, let's start ",
-      task: [
-        {
-          id: 5,
-          title: "Beli dada ayam 5kg",
-          status: 0,
-          endDate: 1731260774000,
-        },
-        {
-          id: 6,
-          title: "Workout 150 menit / minggu",
-          status: 0,
-          endDate: 1731260774000,
-        },
-        {
-          id: 7,
-          title: "Jalan tiap pagi 5k",
-          status: 0,
-          endDate: 1731260774000,
-        },        
-      ]
+      // task: [
+      //   {
+      //     id: 5,
+      //     title: "Beli dada ayam 5kg",
+      //     status: 0,
+      //     endDate: 1731260774000,
+      //   },
+      //   {
+      //     id: 6,
+      //     title: "Workout 150 menit / minggu",
+      //     status: 0,
+      //     endDate: 1731260774000,
+      //   },
+      //   {
+      //     id: 7,
+      //     title: "Jalan tiap pagi 5k",
+      //     status: 0,
+      //     endDate: 1731260774000,
+      //   },        
+      // ]
     },
   ]
 
@@ -120,28 +107,28 @@ export function getGoalsDataByStatus(): GoalDataByStatus[] {
       statusId: 1,
       goalData: [
         {
-          id: 1,
+          id: '1',
           title: "Seminggu solat dhuha",
           context: "Belajar membiasakan solat dhuha",
           target: "Sehari minimal 2 rakaat shalat dhuha",
-          createAt: 1731249474,
+          createdAt: 1731249474,
           timelineDate: 1733841440,
           status: 1,
           statusComplete: "33% on to go",
-          task: [
-            {
-              id: 1,
-              title: "Wudhu setelah mandi",
-              status: 1,
-              endDate: 1733841440,
-            },
-            {
-              id: 1,
-              title: "Baca Quran setelah solat subuh",
-              status: 1,
-              endDate: 1733841440,
-            },
-          ]
+          // task: [
+          //   {
+          //     id: 1,
+          //     title: "Wudhu setelah mandi",
+          //     status: 1,
+          //     endDate: 1733841440,
+          //   },
+          //   {
+          //     id: 1,
+          //     title: "Baca Quran setelah solat subuh",
+          //     status: 1,
+          //     endDate: 1733841440,
+          //   },
+          // ]
         },
       ]
     },

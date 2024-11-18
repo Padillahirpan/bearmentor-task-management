@@ -1,6 +1,5 @@
 import { GoalData } from "@/data/goals-data";
 import { Button } from "../ui/button";
-import { TaskList } from "./detail-goal-task";
 import { ItemGoalContent } from "./item-goal";
 import { SelectedStatus } from "./status-content";
 import { calculateDate } from "@/cons/const";
@@ -15,7 +14,7 @@ export const DetailGoal = ({ goalData }: { goalData: GoalData }) => {
     statusDesc = "Done";
   }
 
-  const startDate = calculateDate(goalData.createAt);
+  const startDate = calculateDate(goalData.createdAt ? goalData.createdAt : 0);
   const endDate = calculateDate(goalData.timelineDate);
   const timeline: string = `${startDate} -> ${endDate}`;
 
@@ -60,14 +59,14 @@ export const DetailGoal = ({ goalData }: { goalData: GoalData }) => {
         <ItemGoalContent title="Context" desc={goalData.context} />
         <ItemGoalContent title="Target" desc={goalData.target} />
 
-        <div className="p-4 items-start">
+        {/* <div className="p-4 items-start">
           <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight text-start">
             Task List
           </h3>
           <div className="pt-4">
             <TaskList taskList={goalData.task} />
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

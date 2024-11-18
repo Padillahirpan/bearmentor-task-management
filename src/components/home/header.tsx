@@ -1,10 +1,17 @@
+import { Link } from "react-router-dom";
 import { ModeToggle } from "./mode-toggle";
+import { HOME_PAGE } from "@/data/goals-management";
 
 export const NavBar = () => {
   return (
     <>
       <div className="flex items-center justify-between my-4">
-        <div className="text-2xl font-bold">Goals Tracker Management 🚀</div>
+        <Link
+          to={HOME_PAGE}
+          className="text-2xl font-bold hover:bg-slate-100 p-2 rounded-xl"
+        >
+          GTM 🚀
+        </Link>
         <div>
           <ModeToggle />
         </div>
