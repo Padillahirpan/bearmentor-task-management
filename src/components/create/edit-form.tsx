@@ -63,7 +63,7 @@ export default function EditForm({
         <div className="grid gap-4 ">
           {/* Goal Field */}
           <FormField
-            defaultValue={goalData.context}
+            defaultValue={goalData.title}
             control={form.control}
             name="goal"
             render={({ field }) => (
