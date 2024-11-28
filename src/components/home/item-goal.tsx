@@ -1,6 +1,7 @@
 import { calculateDate } from "@/cons/const";
 import { GoalData } from "@/data/goals-data";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 export const ItemGoal = ({
   goalData,
@@ -15,7 +16,7 @@ export const ItemGoal = ({
   );
   return (
     <>
-      <a href="#">
+      <Link to={`/detail-goal/${goalData.id}`}>
         <div
           className={cn(
             "p-6 items-start w-full rounded-lg shadow border border-gray-200 dark:border-gray-700",
@@ -35,7 +36,7 @@ export const ItemGoal = ({
             {createdAt} {"->"} {timelineDate}
           </div>
         </div>
-      </a>
+      </Link>
     </>
   );
 };

@@ -8,9 +8,9 @@ export const NavBar = () => {
       <div className="flex items-center justify-between my-4">
         <Link
           to={HOME_PAGE}
-          className="text-2xl font-bold hover:bg-slate-100 p-2 rounded-xl"
+          className="text-2xl font-bold hover:bg-slate-100 p-2 rounded-xl dark:hover:bg-slate-900"
         >
-          GTM 🚀
+          Goals Tracker Management 🚀
         </Link>
         <div>
           <ModeToggle />

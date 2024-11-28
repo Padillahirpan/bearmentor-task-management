@@ -13,7 +13,6 @@ export type GoalData = {
    timelineDate: number;
    status: number;
    statusComplete?: string;
-  //  task: TaskData[];
 }
 
 

@@ -5,7 +5,14 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Root } from "./routes/root.tsx";
 import { ErrorPage } from "./components/error-page.tsx";
 import { AddGoal } from "./pages/create-goal.tsx";
-import { ADD_GOAL_PAGE, HOME_PAGE } from "./data/goals-management.ts";
+import {
+  ADD_GOAL_PAGE,
+  DETAIL_PAGE,
+  EDIT_PAGE,
+  HOME_PAGE,
+} from "./data/goals-management.ts";
+import { DetailGoal } from "./pages/detail-goal.tsx";
+import { EditGoal } from "./pages/edit-goal.tsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +25,18 @@ const router = createBrowserRouter([
     path: ADD_GOAL_PAGE,
     element: <AddGoal />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: DETAIL_PAGE,
+    element: <DetailGoal />,
+    errorElement: <ErrorPage />,
+    loader: DetailGoal.loader,
+  },
+  {
+    path: EDIT_PAGE,
+    element: <EditGoal />,
+    errorElement: <ErrorPage />,
+    loader: EditGoal.loader,
   },
 ]);
 

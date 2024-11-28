@@ -25,6 +25,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import { GoalData } from "@/data/goals-data";
 
 export const formSchema = z.object({
   goal: z.string().min(2, {
@@ -36,14 +37,25 @@ export const formSchema = z.object({
   status: z.string(),
 });
 
-export default function MyForm({
+export default function EditForm({
+  goalData,
   onSubmit,
 }: {
+  goalData: GoalData;
   onSubmit: (data: z.infer<typeof formSchema>) => void;
 }) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
+
+  let statusDesc;
+  if (goalData.status === 1) {
+    statusDesc = "planned";
+  } else if (goalData.status === 2) {
+    statusDesc = "in-progress";
+  } else {
+    statusDesc = "done";
+  }
 
   return (
     <Form {...form}>
@@ -51,6 +63,7 @@ export default function MyForm({
         <div className="grid gap-4 ">
           {/* Goal Field */}
           <FormField
+            defaultValue={goalData.context}
             control={form.control}
             name="goal"
             render={({ field }) => (
@@ -74,6 +87,7 @@ export default function MyForm({
 
           {/* Context Field */}
           <FormField
+            defaultValue={goalData.context}
             control={form.control}
             name="context"
             render={({ field }) => (
@@ -97,6 +111,7 @@ export default function MyForm({
 
           {/* Target Field */}
           <FormField
+            defaultValue={goalData.target}
             control={form.control}
             name="target"
             render={({ field }) => (
@@ -135,7 +150,7 @@ export default function MyForm({
                         )}
                       >
                         {field.value ? (
-                          format(field.value, "PPP")
+                          format(new Date(goalData.timelineDate), "PPP")
                         ) : (
                           <span>Pick a date</span>
                         )}
@@ -158,6 +173,7 @@ export default function MyForm({
           />
           {/* Status Field */}
           <FormField
+            defaultValue={statusDesc}
             control={form.control}
             name="status"
             render={({ field }) => (
@@ -165,10 +181,10 @@ export default function MyForm({
                 <FormLabel className="text-start">Status</FormLabel>
                 <Select
                   onValueChange={field.onChange}
-                  defaultValue={field.value}
+                  defaultValue={statusDesc}
                 >
                   <FormControl className="bg-white text-black">
-                    <SelectTrigger className="bg-white text-gray-500">
+                    <SelectTrigger>
                       <SelectValue placeholder="Select status for your current goal" />
                     </SelectTrigger>
                   </FormControl>

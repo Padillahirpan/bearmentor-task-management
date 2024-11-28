@@ -6,6 +6,8 @@ const GOAL_ITEMS = 'goal-items';
 
 export const ADD_GOAL_PAGE = "/add-goal"
 export const HOME_PAGE = "/"
+export const DETAIL_PAGE = "/detail-goal/:goalId"
+export const EDIT_PAGE = "/edit-goal/:goalId"
 
 export async function getGoals(query?: string) {
    let goals = (await localforage.getItem(GOAL_ITEMS)) as GoalData[];
@@ -37,9 +39,39 @@ export async function createGoal(payload: GoalData) {
    goals.unshift(goal);
    await set(goals);
    return goal;
- }
+}
 
 function set(goalData: GoalData[]) {
    return localforage.setItem(GOAL_ITEMS, goalData);
+}
+
+export async function getGoalById(id: string) {
+   const goals = (await localforage.getItem(GOAL_ITEMS)) as GoalData[];   
+   const goal = goals?.find((goal) => goal.id === id);
+
+   return goal ?? null;
+}
+
+export async function editGoalById(id: string, payload: GoalData) {
+   const goals = (await localforage.getItem(GOAL_ITEMS)) as GoalData[];
+   const goal = goals?.find((goal) => goal.id === id);
+
+   if(!goal) throw Error(`Data not found for ${id}!`)
+   Object.assign(goal, payload);
+
+   await set(goals);
+
+   return goal;
+}
+
+export async function deleteGoalById(id: string) {
+   const goals = (await localforage.getItem(GOAL_ITEMS)) as GoalData[];
+   const index = goals.findIndex((goal) => goal.id === id);
+   if (index > -1) {
+     goals.splice(index, 1);
+     await set(goals);
+     return true;
+   }
+   return false;
  }
 

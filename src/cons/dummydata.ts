@@ -29,20 +29,6 @@ export function getGoalsData(): GoalData[] {
       timelineDate: 1731260774000,
       status: 2,
       statusComplete: "33% in progress",
-      // task: [
-      //   {
-      //     id: 0,
-      //     title: "Wudhu setelah mandi",
-      //     status: 1,
-      //     endDate: 1731260774000,
-      //   },
-      //   {
-      //     id: 1,
-      //     title: "Baca Quran setelah solat subuh",
-      //     status: 1,
-      //     endDate: 1731260774000,
-      //   },
-      // ]
     },
     {
       id: '2',
@@ -53,20 +39,6 @@ export function getGoalsData(): GoalData[] {
       timelineDate: 1731260774000,
       status: 1,
       statusComplete: "Still 0%, let's start ",
-      // task: [
-      //   {
-      //     id: 3,
-      //     title: "Beli buku Self-Dev",
-      //     status: 0,
-      //     endDate: 1731260774000,
-      //   },
-      //   {
-      //     id: 4,
-      //     title: "Membaca buku di pagi hari 5 halaman",
-      //     status: 0,
-      //     endDate: 1731260774000,
-      //   },        
-      // ]
     },
     {
       id: '3',
@@ -77,26 +49,6 @@ export function getGoalsData(): GoalData[] {
       timelineDate: 1731260774000,
       status: 1,
       statusComplete: "Still 0%, let's start ",
-      // task: [
-      //   {
-      //     id: 5,
-      //     title: "Beli dada ayam 5kg",
-      //     status: 0,
-      //     endDate: 1731260774000,
-      //   },
-      //   {
-      //     id: 6,
-      //     title: "Workout 150 menit / minggu",
-      //     status: 0,
-      //     endDate: 1731260774000,
-      //   },
-      //   {
-      //     id: 7,
-      //     title: "Jalan tiap pagi 5k",
-      //     status: 0,
-      //     endDate: 1731260774000,
-      //   },        
-      // ]
     },
   ]
 
@@ -115,20 +67,6 @@ export function getGoalsDataByStatus(): GoalDataByStatus[] {
           timelineDate: 1733841440,
           status: 1,
           statusComplete: "33% on to go",
-          // task: [
-          //   {
-          //     id: 1,
-          //     title: "Wudhu setelah mandi",
-          //     status: 1,
-          //     endDate: 1733841440,
-          //   },
-          //   {
-          //     id: 1,
-          //     title: "Baca Quran setelah solat subuh",
-          //     status: 1,
-          //     endDate: 1733841440,
-          //   },
-          // ]
         },
       ]
     },

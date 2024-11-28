@@ -10,8 +10,6 @@ export const AddGoal = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      console.log("test values", values);
-
       let status;
       if (values.status === "planned") {
         status = 1;
